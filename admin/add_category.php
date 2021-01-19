@@ -82,28 +82,29 @@
                         $ext = end(explode('.', $image_name));
                         $image_name = "Food_Category_".rand(000,999).'.'.$ext;
 
-                        $source_path = $_FILES['image']['name']; //image source path
+                        $source_path = $_FILES['image']['tmp_name']; //image source path
                         
                         $destination_path = "../images/Category/".$image_name; //image destination path
 
                         $upload = move_uploaded_file($source_path,$destination_path);
                         //Check whether or not image is uploaded
-                            if($upload==true){
+                            if($upload==false){
                                 //set message
-                                $_SESSION['upload'] = "<div class='success text-center'>Image Uploaded.</div>";
+                                $_SESSION['upload'] = "<div class='error text-center'>Image Not Uploaded.</div>";
                                 //Redirect
-                                header('location:'.SITEURL.'admin/category.php');
+                                header('location:'.SITEURL.'admin/add_category.php');
                                 //Stop the process
                                 die();
                             }
                         }
-                    }else{
+                    }
+                    else{
                         //Don't upload image
                         //set message
-                        $_SESSION['not-uploaded'] = "<div class='error text-center'>Unable to Upload Image.</div>";
-                        //Redirect
-                        header('location:'.SITEURL.'admin/add_category.php');
-                        // $image_name = "";
+                        // $_SESSION['not-uploaded'] = "<div class='error text-center'>Unable to Upload Image.</div>";
+                        // //Redirect
+                        // header('location:'.SITEURL.'admin/add_category.php');
+                        $image_name = "";
                     }
                 
                 //Create SQL Query to insert values into database

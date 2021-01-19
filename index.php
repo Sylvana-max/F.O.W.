@@ -15,9 +15,9 @@
 
 <?php 
 
-    if(isset($_SESSION['add'])){
-        echo $_SESSION['add'];
-        unset($_SESSION['add']);
+    if(isset($_SESSION['order'])){
+        echo $_SESSION['order'];
+        unset($_SESSION['order']);
     }
 
 ?>
