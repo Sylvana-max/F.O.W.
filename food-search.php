@@ -60,7 +60,7 @@
                                 <p class="food-price">GHC<?php echo $price; ?></p>
                                 <p class="food-detail"><?php echo $description; ?></p>
                                 <br>
-                                <a href="order.html" class="btn btn-primary">Order Now</a>
+                                <a href="<?php echo SITEURL; ?>order.html" class="btn btn-primary">Order Now</a>
                             </div>
                         </div>
                         <?php   

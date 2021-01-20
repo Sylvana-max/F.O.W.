@@ -97,7 +97,7 @@
                 $price = $_POST['price'];
                 $qty = $_POST['qty'];
                 $total = $price * $qty; //Calculates the total price
-                $order_date = date("Y-m-d h:i:sa"); //Displays the date and time purchase is made
+                $order_date = date("D, d M Y H:i:s \G\M\T"); //Displays the date and time purchase is made
                 $status = "Ordered";
                 $customer_name = $_POST['full-name'];
                 $customer_contact = $_POST['contact'];
@@ -106,13 +106,13 @@
 
                 //Saves the order in database
                 //Create sql to save data
-                $sql2 = "INSERT INTO order SET 
-
+                $sql2 = "INSERT INTO order_tbl SET
+                    
                     food = '$food',
                     price = $price,
                     qty = $qty,
                     total = $total,
-                    order_date = '$order_date',
+                    order_date = now(),
                     status = '$status',
                     customer_name = '$customer_name',
                     customer_contact ='$customer_contact',
@@ -131,7 +131,7 @@
                     }
                     else{
                         //Failed. Redirect to order page
-                        $_SESSION['order'] = "<div class='error text-center'>Sorry, your order was unsuccessful.</div>";
+                        $_SESSION['order'] = "<div class='error text-center'>Sorry, your order was unsuccessful.</div>".mysqli_error($connection);;
                         header("location:".SITEURL.'order.php');
                     }
             }
