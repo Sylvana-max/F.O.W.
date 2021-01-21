@@ -5,11 +5,6 @@ This is a Restaurant Website, redesigned from html and css into PHP. It was deve
 [Responsive Web Design Course 2020](https://www.youtube.com/watch?v=VaV_Ro8jpPY)
 
 
-## Support Developer
-1. Subscribe & Share my YouTube Channel - https://bit.ly/vijay-thapa-online-courses
-2. Add a Star 🌟  to this 👆 Repository
-
-
 ## Technologies Used
 1. HTML5
 2. CSS3
