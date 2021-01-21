@@ -97,7 +97,7 @@
                 $price = $_POST['price'];
                 $qty = $_POST['qty'];
                 $total = $price * $qty; //Calculates the total price
-                $order_date = date("D, d M Y H:i:s \G\M\T"); //Displays the date and time purchase is made
+                $order_date = date("d m Y H:i:s"); //Displays the date and time purchase is made
                 $status = "Ordered";
                 $customer_name = $_POST['full-name'];
                 $customer_contact = $_POST['contact'];
@@ -131,7 +131,7 @@
                     }
                     else{
                         //Failed. Redirect to order page
-                        $_SESSION['order'] = "<div class='error text-center'>Sorry, your order was unsuccessful.</div>".mysqli_error($connection);;
+                        $_SESSION['order'] = "<div class='error text-center'>Sorry, your order was unsuccessful.</div>".mysqli_error($connection);
                         header("location:".SITEURL.'order.php');
                     }
             }

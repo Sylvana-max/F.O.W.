@@ -22,7 +22,8 @@
 }
 .form-group{
     width: 85%;
-    padding: 2%;
+    padding: 1%;
+    margin: 0%;
     
 }
 .form-control {
@@ -159,5 +160,17 @@ table tr td{
 }
 .center{
     position: center;
+}
+.Ordered{
+    color: black;
+}
+.On-Delivery{
+    color: orange;
+}
+.Delivered{
+    color: green;
+}
+.Cancelled{
+    color: red;
 }
 
